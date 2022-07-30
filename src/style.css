@@ -30,3 +30,97 @@
     padding-left:24px;
     font-size: 1rem;
 }
+.dashboard {
+    height: calc(100% - 65px);
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    
+}
+.side-nav {
+    padding:48px;
+}
+.side-nav h2 {
+    padding-bottom: 6px;
+}
+.icon {
+    width:100%;
+}
+.temperature {
+    font-size:3rem;
+    font-style: normal;
+    font-weight: 300;
+    margin-bottom: 6px;
+}
+.current-day {
+    font-size:1.3rem;
+    font-weight: 400;
+}
+.content {
+    background-color:#F6F6F8;
+    padding: 48px;
+    display:grid;
+    grid-template-rows: 1.4fr 2fr;
+}
+.forecast {
+}
+.forecast h2 {
+    margin-bottom:24px;
+} 
+.card-list {
+    height: 88%;
+    display:grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    gap:12px;
+    padding: 0 72px 0 72px;
+    
+}
+.card {
+    border-radius: 12px;
+    height: 80%;
+    background-color:white;
+    padding:12px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+}
+.img-card {
+    height: 60px;
+    margin:12px;
+}
+.today {
+    padding-top: 12px;
+}
+.today h2 {
+    margin-bottom: 12px;
+}
+.info-list {
+    height: 100%;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.info-list > * {
+    border-radius: 12px;
+    background-color: white;
+    padding:18px;
+}
+.info-list h4 {
+    color: gray;
+}
+.info-icon {
+    height: 60px;
+}
+.info {
+    height:100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:24px;
+}
+.info h2 {
+    font-size: 2.3rem;
+    font-weight: 400;
+    margin:0;
+}
