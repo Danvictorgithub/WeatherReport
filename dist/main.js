@@ -40,6 +40,36 @@ eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=w
 
 /***/ }),
 
+/***/ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/date-fns/esm/_lib/requiredArgs/index.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ requiredArgs)\n/* harmony export */ });\nfunction requiredArgs(required, args) {\n  if (args.length < required) {\n    throw new TypeError(required + ' argument' + (required > 1 ? 's' : '') + ' required, but only ' + args.length + ' present');\n  }\n}\n\n//# sourceURL=webpack://weatherreport/./node_modules/date-fns/esm/_lib/requiredArgs/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/date-fns/esm/getDay/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/date-fns/esm/getDay/index.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ getDay)\n/* harmony export */ });\n/* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../toDate/index.js */ \"./node_modules/date-fns/esm/toDate/index.js\");\n/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ \"./node_modules/date-fns/esm/_lib/requiredArgs/index.js\");\n\n\n/**\n * @name getDay\n * @category Weekday Helpers\n * @summary Get the day of the week of the given date.\n *\n * @description\n * Get the day of the week of the given date.\n *\n * ### v2.0.0 breaking changes:\n *\n * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).\n *\n * @param {Date|Number} date - the given date\n * @returns {0|1|2|3|4|5|6} the day of week, 0 represents Sunday\n * @throws {TypeError} 1 argument required\n *\n * @example\n * // Which day of the week is 29 February 2012?\n * const result = getDay(new Date(2012, 1, 29))\n * //=> 3\n */\n\nfunction getDay(dirtyDate) {\n  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(1, arguments);\n  var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(dirtyDate);\n  var day = date.getDay();\n  return day;\n}\n\n//# sourceURL=webpack://weatherreport/./node_modules/date-fns/esm/getDay/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/date-fns/esm/toDate/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/date-fns/esm/toDate/index.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ toDate)\n/* harmony export */ });\n/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ \"./node_modules/date-fns/esm/_lib/requiredArgs/index.js\");\n\n/**\n * @name toDate\n * @category Common Helpers\n * @summary Convert the given argument to an instance of Date.\n *\n * @description\n * Convert the given argument to an instance of Date.\n *\n * If the argument is an instance of Date, the function returns its clone.\n *\n * If the argument is a number, it is treated as a timestamp.\n *\n * If the argument is none of the above, the function returns Invalid Date.\n *\n * **Note**: *all* Date arguments passed to any *date-fns* function is processed by `toDate`.\n *\n * @param {Date|Number} argument - the value to convert\n * @returns {Date} the parsed date in the local time zone\n * @throws {TypeError} 1 argument required\n *\n * @example\n * // Clone the date:\n * const result = toDate(new Date(2014, 1, 11, 11, 30, 30))\n * //=> Tue Feb 11 2014 11:30:30\n *\n * @example\n * // Convert the timestamp to date:\n * const result = toDate(1392098430000)\n * //=> Tue Feb 11 2014 11:30:30\n */\n\nfunction toDate(argument) {\n  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(1, arguments);\n  var argStr = Object.prototype.toString.call(argument); // Clone the date\n\n  if (argument instanceof Date || typeof argument === 'object' && argStr === '[object Date]') {\n    // Prevent the date to lose the milliseconds when passed to new Date() in IE10\n    return new Date(argument.getTime());\n  } else if (typeof argument === 'number' || argStr === '[object Number]') {\n    return new Date(argument);\n  } else {\n    if ((typeof argument === 'string' || argStr === '[object String]') && typeof console !== 'undefined') {\n      // eslint-disable-next-line no-console\n      console.warn(\"Starting with v2.0.0-beta.1 date-fns doesn't accept strings as date arguments. Please use `parseISO` to parse strings. See: https://git.io/fjule\"); // eslint-disable-next-line no-console\n\n      console.warn(new Error().stack);\n    }\n\n    return new Date(NaN);\n  }\n}\n\n//# sourceURL=webpack://weatherreport/./node_modules/date-fns/esm/toDate/index.js?");
+
+/***/ }),
+
 /***/ "./src/style.css":
 /*!***********************!*\
   !*** ./src/style.css ***!
@@ -116,7 +146,187 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\n\n//# sourceURL=webpack://weatherreport/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var date_fns_getDay__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! date-fns/getDay */ \"./node_modules/date-fns/esm/getDay/index.js\");\n/* harmony import */ var _01d_4x_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./01d@4x.png */ \"./src/01d@4x.png\");\n/* harmony import */ var _01n_4x_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./01n@4x.png */ \"./src/01n@4x.png\");\n/* harmony import */ var _02d_4x_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./02d@4x.png */ \"./src/02d@4x.png\");\n/* harmony import */ var _02n_4x_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./02n@4x.png */ \"./src/02n@4x.png\");\n/* harmony import */ var _03d_4x_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./03d@4x.png */ \"./src/03d@4x.png\");\n/* harmony import */ var _03n_4x_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./03n@4x.png */ \"./src/03n@4x.png\");\n/* harmony import */ var _04d_4x_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./04d@4x.png */ \"./src/04d@4x.png\");\n/* harmony import */ var _04n_4x_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./04n@4x.png */ \"./src/04n@4x.png\");\n/* harmony import */ var _09d_4x_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./09d@4x.png */ \"./src/09d@4x.png\");\n/* harmony import */ var _09n_4x_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./09n@4x.png */ \"./src/09n@4x.png\");\n/* harmony import */ var _10d_4x_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./10d@4x.png */ \"./src/10d@4x.png\");\n/* harmony import */ var _10n_4x_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./10n@4x.png */ \"./src/10n@4x.png\");\n/* harmony import */ var _11d_4x_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./11d@4x.png */ \"./src/11d@4x.png\");\n/* harmony import */ var _11n_4x_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./11n@4x.png */ \"./src/11n@4x.png\");\n/* harmony import */ var _13d_4x_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./13d@4x.png */ \"./src/13d@4x.png\");\n/* harmony import */ var _13n_4x_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./13n@4x.png */ \"./src/13n@4x.png\");\n/* harmony import */ var _50d_4x_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./50d@4x.png */ \"./src/50d@4x.png\");\n/* harmony import */ var _50n_4x_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./50n@4x.png */ \"./src/50n@4x.png\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst inputCity = document.querySelector('input[type=\"text\"]');\r\nconst buttonInput = document.querySelector('button[type=\"button\"]');\r\n\r\nlet firstCardDay = document.querySelector('.firstCardDay');\r\nlet firstCardImage = document.querySelector('.firstCardImage');\r\nlet firstCardTemperature = document.querySelector('.firstCardTemperature');\r\n\r\nlet secondCardDay = document.querySelector('.secondCardDay');\r\nlet secondCardImage = document.querySelector('.secondCardImage');\r\nlet secondCardTemperature = document.querySelector('.secondCardTemperature');\r\n\r\nlet thirdCardDay = document.querySelector('.thirdCardDay');\r\nlet thirdCardImage = document.querySelector('.thirdCardImage');\r\nlet thirdCardTemperature = document.querySelector('.thirdCardTemperature');\r\n\r\nlet fourthCardDay = document.querySelector('.fourthCardDay');\r\nlet fourthCardImage = document.querySelector('.fourthCardImage');\r\nlet fourthCardTemperature = document.querySelector('.fourthCardTemperature');\r\n\r\nlet fifthCardDay = document.querySelector('.fifthCardDay');\r\nlet fifthCardImage = document.querySelector('.fifthCardImage');\r\nlet fifthCardTemperature = document.querySelector('.fifthCardTemperature');\r\n\r\n\r\nlet cityName = document.querySelector('.cityName');\r\nlet temperature = document.querySelector('.temperature');\r\nlet currentDay = document.querySelector('.current-day');\r\nlet description = document.querySelector('.description');\r\nlet humidity = document.querySelector('.humidityVal');\r\nlet wind = document.querySelector('.windval');\r\nlet pressure = document.querySelector('.pressureVal');\r\nlet visibility = document.querySelector('.visibilityVal');\r\nlet seaLevel = document.querySelector('.sea-levelVal');\r\nlet precipation = document.querySelector('.precipitationVal');\r\nlet mainImage = document.querySelector('.icon');\r\nbuttonInput.addEventListener('click', \r\n    function(event){\r\n        let city = inputCity.value;\r\n        currentData = getWeatherData(city);\r\n        updateWeather();\r\n    }\r\n);\r\nlet currentData = getWeatherData('Philippines');\r\nupdateWeather();\r\nasync function getWeatherData(CityName) {\r\n    let responser;\r\n    try {\r\n        responser = await fetch(\"http://api.openweathermap.org/data/2.5/forecast?q=\" + CityName + \"&appid=6978b8ee3b6ede7e11aea9111f201802\", {mode: 'cors'});\r\n    } catch (err) {\r\n        throw new Error(\"Something is wrong\");\r\n    }\r\n    const weatherData = await responser.json();\r\n    return weatherData;\r\n}\r\ncurrentData.then(function(response){\r\n    console.log(response);\r\n} );\r\nfunction updateWeather() {\r\n    currentData.then(function(response) {\r\n        console.log(response);\r\n        if(response.cod === '200') {\r\n            firstCardDay.textContent = `${returnDay((0,date_fns_getDay__WEBPACK_IMPORTED_MODULE_19__[\"default\"])(new Date(response.list[7].dt_txt.split(' ')[0])))}`;\r\n            firstCardImage.src = returnIcon(response.list[7].weather[0].icon);\r\n            firstCardTemperature.textContent = `${ktoC(response.list[7].main.temp)} °C`;\r\n\r\n            secondCardDay.textContent = `${returnDay((0,date_fns_getDay__WEBPACK_IMPORTED_MODULE_19__[\"default\"])(new Date(response.list[15].dt_txt.split(' ')[0])))}`;\r\n            secondCardImage.src = returnIcon(response.list[15].weather[0].icon);\r\n            secondCardTemperature.textContent = `${ktoC(response.list[15].main.temp)} °C`;\r\n\r\n            thirdCardDay.textContent = `${returnDay((0,date_fns_getDay__WEBPACK_IMPORTED_MODULE_19__[\"default\"])(new Date(response.list[23].dt_txt.split(' ')[0])))}`;\r\n            thirdCardImage.src = returnIcon(response.list[23].weather[0].icon);\r\n            thirdCardTemperature.textContent = `${ktoC(response.list[23].main.temp)} °C`;\r\n\r\n            fourthCardDay.textContent = `${returnDay((0,date_fns_getDay__WEBPACK_IMPORTED_MODULE_19__[\"default\"])(new Date(response.list[31].dt_txt.split(' ')[0])))}`;\r\n            fourthCardImage.src = returnIcon(response.list[31].weather[0].icon);\r\n            fourthCardTemperature.textContent = `${ktoC(response.list[31].main.temp)} °C`;\r\n\r\n            fifthCardDay.textContent = `${returnDay((0,date_fns_getDay__WEBPACK_IMPORTED_MODULE_19__[\"default\"])(new Date(response.list[39].dt_txt.split(' ')[0])))}`;\r\n            fifthCardImage.src = returnIcon(response.list[39].weather[0].icon);\r\n            fifthCardTemperature.textContent = `${ktoC(response.list[39].main.temp)} °C`;\r\n\r\n            mainImage.src = returnIcon(response.list[0].weather[0].icon);\r\n            cityName.textContent = `${response.city.name}`;\r\n            temperature.textContent = `${ktoC(response.list[0].main.temp)} °C`;\r\n            currentDay.textContent = `${returnDay((0,date_fns_getDay__WEBPACK_IMPORTED_MODULE_19__[\"default\"])(new Date(response.list[0].dt_txt.split(' ')[0])))}`;\r\n            description.textContent = `${response.list[0].weather[0].description}`;\r\n            humidity.textContent = `${response.list[0].main.humidity}`;\r\n            wind.textContent = `${response.list[0].wind.speed}`;\r\n            pressure.textContent = `${response.list[0].main.pressure}`;\r\n            visibility.textContent = `${response.list[0].visibility}`;\r\n            seaLevel.textContent = `${response.list[0].main.sea_level}`;\r\n            if (response.list[0].rain) {\r\n                precipation.textContent = `${response.list[0].rain['3h']}`;\r\n            } else {\r\n                precipation.textContent = 'No record';\r\n            }\r\n        }\r\n    });\r\n}\r\nfunction ktoC(kelvin) {\r\n    return Math.floor(kelvin-273.15);\r\n}\r\nfunction returnDay(index) {\r\n    switch (index) {\r\n        case 0:\r\n            return 'Sunday';\r\n            break;\r\n        case 1:\r\n            return 'Monday';\r\n            break;\r\n        case 2:\r\n            return 'Tuesday';\r\n            break;\r\n        case 3:\r\n            return 'Wednesday';\r\n            break;\r\n        case 4:\r\n            return 'Thursday';\r\n            break;\r\n        case 5:\r\n            return 'Friday';\r\n            break;\r\n        case 6:\r\n            return 'Saturday';\r\n            break;\r\n    }\r\n}\r\nfunction returnIcon(id) {\r\n    switch (id) {\r\n        case '01d':\r\n            return _01d_4x_png__WEBPACK_IMPORTED_MODULE_1__;\r\n        case '01n':\r\n            return _01n_4x_png__WEBPACK_IMPORTED_MODULE_2__;\r\n        case '02d':\r\n            return _02d_4x_png__WEBPACK_IMPORTED_MODULE_3__;\r\n        case '02n':\r\n            return _02n_4x_png__WEBPACK_IMPORTED_MODULE_4__;\r\n        case '03d':\r\n            return _03d_4x_png__WEBPACK_IMPORTED_MODULE_5__;\r\n        case '03n':\r\n            return _03n_4x_png__WEBPACK_IMPORTED_MODULE_6__;\r\n        case '04d':\r\n            return _04d_4x_png__WEBPACK_IMPORTED_MODULE_7__;\r\n        case '04n':\r\n            return _04n_4x_png__WEBPACK_IMPORTED_MODULE_8__;\r\n        case '09d':\r\n            return _09d_4x_png__WEBPACK_IMPORTED_MODULE_9__;\r\n        case '09n':\r\n            return _09n_4x_png__WEBPACK_IMPORTED_MODULE_10__;\r\n        case '10d':\r\n            return _10d_4x_png__WEBPACK_IMPORTED_MODULE_11__;\r\n        case '10n':\r\n            return _10n_4x_png__WEBPACK_IMPORTED_MODULE_12__;\r\n        case '11d':\r\n            return _11d_4x_png__WEBPACK_IMPORTED_MODULE_13__;\r\n        case '11n':\r\n            return _11n_4x_png__WEBPACK_IMPORTED_MODULE_14__;\r\n        case '13d':\r\n            return _13d_4x_png__WEBPACK_IMPORTED_MODULE_15__;\r\n        case '13n':\r\n            return _13n_4x_png__WEBPACK_IMPORTED_MODULE_16__;\r\n        case '50d':\r\n            return _50d_4x_png__WEBPACK_IMPORTED_MODULE_17__;\r\n        case '50n':\r\n            return _50n_4x_png__WEBPACK_IMPORTED_MODULE_18__;\r\n    }\r\n}\n\n//# sourceURL=webpack://weatherreport/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/01d@4x.png":
+/*!************************!*\
+  !*** ./src/01d@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"5c6aa2edc37bc31f0168.png\";\n\n//# sourceURL=webpack://weatherreport/./src/01d@4x.png?");
+
+/***/ }),
+
+/***/ "./src/01n@4x.png":
+/*!************************!*\
+  !*** ./src/01n@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"8b8fa17863da201aa9e7.png\";\n\n//# sourceURL=webpack://weatherreport/./src/01n@4x.png?");
+
+/***/ }),
+
+/***/ "./src/02d@4x.png":
+/*!************************!*\
+  !*** ./src/02d@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"6d3e5a881c16fd843dae.png\";\n\n//# sourceURL=webpack://weatherreport/./src/02d@4x.png?");
+
+/***/ }),
+
+/***/ "./src/02n@4x.png":
+/*!************************!*\
+  !*** ./src/02n@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"e83e444a5dec03b1c425.png\";\n\n//# sourceURL=webpack://weatherreport/./src/02n@4x.png?");
+
+/***/ }),
+
+/***/ "./src/03d@4x.png":
+/*!************************!*\
+  !*** ./src/03d@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"a3d2efa325e8a9abd41b.png\";\n\n//# sourceURL=webpack://weatherreport/./src/03d@4x.png?");
+
+/***/ }),
+
+/***/ "./src/03n@4x.png":
+/*!************************!*\
+  !*** ./src/03n@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"a3d2efa325e8a9abd41b.png\";\n\n//# sourceURL=webpack://weatherreport/./src/03n@4x.png?");
+
+/***/ }),
+
+/***/ "./src/04d@4x.png":
+/*!************************!*\
+  !*** ./src/04d@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"8f978ee3cd11fb109c5f.png\";\n\n//# sourceURL=webpack://weatherreport/./src/04d@4x.png?");
+
+/***/ }),
+
+/***/ "./src/04n@4x.png":
+/*!************************!*\
+  !*** ./src/04n@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"8f978ee3cd11fb109c5f.png\";\n\n//# sourceURL=webpack://weatherreport/./src/04n@4x.png?");
+
+/***/ }),
+
+/***/ "./src/09d@4x.png":
+/*!************************!*\
+  !*** ./src/09d@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"cf55321a1c93e0248def.png\";\n\n//# sourceURL=webpack://weatherreport/./src/09d@4x.png?");
+
+/***/ }),
+
+/***/ "./src/09n@4x.png":
+/*!************************!*\
+  !*** ./src/09n@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"cf55321a1c93e0248def.png\";\n\n//# sourceURL=webpack://weatherreport/./src/09n@4x.png?");
+
+/***/ }),
+
+/***/ "./src/10d@4x.png":
+/*!************************!*\
+  !*** ./src/10d@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"d0c78077e8142ec3d7f9.png\";\n\n//# sourceURL=webpack://weatherreport/./src/10d@4x.png?");
+
+/***/ }),
+
+/***/ "./src/10n@4x.png":
+/*!************************!*\
+  !*** ./src/10n@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"0d5f576ea2f89d0e6026.png\";\n\n//# sourceURL=webpack://weatherreport/./src/10n@4x.png?");
+
+/***/ }),
+
+/***/ "./src/11d@4x.png":
+/*!************************!*\
+  !*** ./src/11d@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"493f0bb3e92426d033fa.png\";\n\n//# sourceURL=webpack://weatherreport/./src/11d@4x.png?");
+
+/***/ }),
+
+/***/ "./src/11n@4x.png":
+/*!************************!*\
+  !*** ./src/11n@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"493f0bb3e92426d033fa.png\";\n\n//# sourceURL=webpack://weatherreport/./src/11n@4x.png?");
+
+/***/ }),
+
+/***/ "./src/13d@4x.png":
+/*!************************!*\
+  !*** ./src/13d@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"755849b002a0236f5c97.png\";\n\n//# sourceURL=webpack://weatherreport/./src/13d@4x.png?");
+
+/***/ }),
+
+/***/ "./src/13n@4x.png":
+/*!************************!*\
+  !*** ./src/13n@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"755849b002a0236f5c97.png\";\n\n//# sourceURL=webpack://weatherreport/./src/13n@4x.png?");
+
+/***/ }),
+
+/***/ "./src/50d@4x.png":
+/*!************************!*\
+  !*** ./src/50d@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"0040120074f76d1c3eec.png\";\n\n//# sourceURL=webpack://weatherreport/./src/50d@4x.png?");
+
+/***/ }),
+
+/***/ "./src/50n@4x.png":
+/*!************************!*\
+  !*** ./src/50n@4x.png ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"0040120074f76d1c3eec.png\";\n\n//# sourceURL=webpack://weatherreport/./src/50n@4x.png?");
 
 /***/ })
 
@@ -171,6 +381,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -185,6 +407,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
