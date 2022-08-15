@@ -66,7 +66,7 @@ updateWeather();
 async function getWeatherData(CityName) {
     let responser;
     try {
-        responser = await fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + CityName + "&appid=6978b8ee3b6ede7e11aea9111f201802", {mode: 'cors'});
+        responser = await fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + CityName + "&appid=6978b8ee3b6ede7e11aea9111f201802", {mode: 'cors'});
     } catch (err) {
         throw new Error("Something is wrong");
     }
